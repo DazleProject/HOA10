@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOA10</title>
+    <style>
+        .header {
+        color: rgb(255, 255, 255);
+        background-color: blue;
+        padding: 30px;
+        text-align: center;
+        }
+
+        .button {
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin: 15px;
+            padding: 100px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 60vh;
+            height:25vh;
+            position: relative;
+            overflow: hidden;
+            transition: transform 1s;
+        }
+
+        .button:hover{
+            background-color: black;
+            transform: scale(0.9);
+        }
+
+        .button img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .active {
+            background-color: rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header><h1 class="header">Dazle Salvedia</h1></header>
+    <button class="button" onclick="toggleContent(this,'https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8mMueoTB-1P8EIn8iSoyEq44Ruj-_MEE2g&usqp=CAU')">HOBBY</button>
+    <button class="button" onclick="toggleContent(this,'https:/media.istockphoto.com/id/1403762590/vector/realistic-isolated-basketball-ball-accessory.jpg?s=1024x1024&w=is&k=20&c=faCmLn5MOmI80-DrboO65lYN9LrxHsYHe2VJ8LWSpAQ=')">BALL</button>
+    <button class="button" onclick="toggleContent(this,'https:/sf.ezoiccdn.com/ezoimgfmt/www.schemecolor.com/wp-content/uploads/html-css-gray-7E7E7E.png?ezimgfmt=ng%3Awebp%2Fngcb1%2Frs%3Adevice%2Frscb1-1')">COLOR</button>
+    <button class="button" onclick="toggleContent(this,'https:/images.pexels.com/photos/1152359/pexels-photo-1152359.jpeg')">SEASON</button>
+    <button class="button" onclick="toggleContent(this,'https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Tg94VZvpkOWAQ1rKBXONXOYy4CZ7bj9R7Q&usqp=CAU')">CHARACTER</button>
+    <button class="button" onclick="toggleContent(this,'https:/www.createwithnestle.ph/sites/default/files/srh_recipes/8a45d2c2a123a2e61542bce83a089b4e.jpg')">DESSERT</button>
+    <button class="button" onclick="toggleContent(this,'https:/assets.unileversolutions.com/recipes-v3/214409-default.png?im=AspectCrop=(720,459);Resize=(720,459)')">FOOD</button>
+    <button class="button" onclick="toggleContent(this,'https:/www.holland.com/upload_mm/d/e/6/83185_fullimage_people%20riding%20bicycles%20through%20downtown%20amsterdam.%20sunlight%20and%20silhouettes%20%C2%A9%20taiga%20via%20shutterstock_1150x663.jpg')">PLACE</button>
+    <button class="button" onclick="toggleContent(this,'https:/t4.ftcdn.net/jpg/05/41/20/69/360_F_541206937_G24jFacp3YIQoui8x8yBRdrsQgJbAQNF.jpg')">Time of Day</button>
+
+    <script>
+        function toggleContent(button, imageSrc) {
+            var existingImage = button.querySelector("img");
+            if (existingImage) {
+                existingImage.remove();
+                button.classList.remove("active");
+            } else {
+                var image = new Image();
+                image.src = imageSrc;
+                image.style.width = button.offsetWidth + "px";
+                image.style.height = button.offsetHeight + "px";
+                image.style.display = "block";
+                image.style.margin = "0 auto";
+    
+                button.appendChild(image);
+                button.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>
